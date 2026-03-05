@@ -1,0 +1,27 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Do not insert a line break between shell prompts
+add_newline = false
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# Disable Google Cloud information
+[gcloud]
+disabled = true
+
+# Disabled AWS information
+[aws]
+disabled = true
+
+[container]
+disabled = false
+
+[docker_context]
+only_with_files = false
+
+[directory]
+truncation_length = 2     # Shows parent and current directory
+truncate_to_repo = false  # Also apply truncation_length to git repos
