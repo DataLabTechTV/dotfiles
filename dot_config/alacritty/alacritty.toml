@@ -1,0 +1,54 @@
+general.import = [
+  "catppuccin-mocha.toml",
+]
+
+[env]
+TERM = "xterm-256color"
+LC_CTYPE = "en_US.UTF-8"
+TERM_PROGRAM = "alacritty"
+WSLENV = "TERM/u:LC_CTYPE/u:TERM_PROGRAM/u"
+
+[window]
+decorations = "Full"
+startup_mode = "Windowed"
+dynamic_title = true
+opacity = 0.975
+dynamic_padding = false
+dimensions = { columns = 111, lines = 33 }
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 12
+normal = { family = "CaskaydiaCove Nerd Font", style = "Regular" }
+bold = { family = "CaskaydiaCove Nerd Font", style = "Bold" }
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+thickness = 0.2
+blink_interval = 550
+unfocused_hollow = true
+
+[terminal]
+osc52 = "CopyPaste"
+shell = { program = "fish" }
+
+[mouse]
+bindings = [{ mouse = "Right", mods = "Control", action = "Paste" }]
+
+[keyboard]
+bindings = [
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "Space", mods = "Control", chars = "\u0000" },
+]
+
+[debug]
+render_timer = false
+persistent_logging = false
