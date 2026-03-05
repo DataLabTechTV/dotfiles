@@ -19,9 +19,7 @@ I would recommend you try to run the following command:
 chezmoi init --apply DataLabTechTV/dotfiles
 ```
 
-```
 When you get prompted to input the age public key, just type whatever. You'll then need to replace any decrypted includes (grep for `age`). For example, you'll find one on the `~/.config/fish/config.fish`, where I set the MAC address for my home lab.
-```
 
 ## Common Commands
 
