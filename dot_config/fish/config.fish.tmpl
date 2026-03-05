@@ -1,0 +1,134 @@
+# --- Fish ---
+
+set -x SHELL /bin/fish
+
+set fish_greeting
+
+set -g theme_short_path yes
+set -g fish_prompt_pwd_dir_length 0
+
+# --- Environment ---
+
+set -x EDITOR vim
+set -x VISUAL $EDITOR
+set -x PAGER 'less -X -F -i'
+set -x BC_ENV_ARGS ~/.bcrc
+
+if uname -r | grep -q WSL2
+    set -x BROWER wslview
+end
+
+if uname | grep -q Darwin
+    set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY 1
+    set -x JAVA_HOME (/usr/libexec/java_home)
+end
+
+# --- Path ---
+
+fish_add_path -m ~/bin
+fish_add_path -m ~/.local/bin
+fish_add_path -m ~/go/bin
+fish_add_path -m ~/.cargo/bin
+fish_add_path -m ~/.pyenv/bin
+fish_add_path -m ~/.cabal/bin
+fish_add_path -m ~/.config/emacs/bin
+fish_add_path -m /usr/local/go/bin
+
+# --- PostgreSQL Libs ---
+
+if uname | grep -q Darwin
+    fish_add_path -p -m /opt/homebrew/opt/postgresql@15/bin
+    set -x LDFLAGS '-L/opt/homebrew/opt/postgresql@15/lib'
+    set -x CPPFLAGS '-I/opt/homebrew/opt/postgresql@15/include'
+end
+
+# --- Abbreviations ---
+
+abbr v vim
+
+abbr d distrobox
+abbr dd distrobox enter devbox
+
+abbr c chezmoi
+abbr ce chezmoi edit
+abbr ca chezmoi apply
+abbr cs chezmoi status
+
+abbr pp prettyping 1.1.1.1
+abbr wake-delorean sudo ether-wake {{ include ".chezmoitemplates/secrets/homelab.mac.age" | decrypt | trim }}
+
+# --- Git ---
+
+abbr gsls 'git ls-files -v | grep ^S'
+abbr gs 'git update-index --skip-worktree'
+abbr gns 'git update-index --no-skip-worktree'
+
+# --- Kubernetes ---
+
+abbr m minikube
+abbr k kubectl
+abbr kns kubens
+
+# --- Interactive shell ---
+
+if status is-interactive
+    if uname | grep -q Darwin
+        source $HOME/.iterm2_shell_integration.fish
+    end
+
+    if test "$TERM_PROGRAM" = alacritty -o "$TERM_PROGRAM" = WezTerm
+        if type -q tmux
+            if not set -q TMUX
+                exec tmux new-session -A -s main
+            end
+        end
+    end
+
+    if type -q starship
+        starship init fish | source
+    end
+
+    if type -q zoxide
+        zoxide init fish | source
+    end
+
+    if type -q direnv
+        direnv hook fish | source
+    end
+
+    if type -q pyenv
+        pyenv init - | source
+        set -x CLOUDSDK_PYTHON_SITEPACKAGES 1
+        set -x CLOUDSDK_PYTHON (which python)
+    end
+
+    if type -q fnm
+        fnm env --use-on-cd | source
+    end
+
+    if test -e $HOME/.cargo/env.fish
+        source $HOME/.cargo/env.fish
+    end
+
+    if type -q keychain
+        set ssh_private_keys (find ~/.ssh -name '*.pub' | sed 's/\.pub//')
+        keychain --quiet --eval $ssh_private_keys | source
+    end
+
+    if type -q podman
+        {{ $podman_fmt := "{{.Host.RemoteSocket.Path}}" -}}
+        set -x DOCKER_HOST unix://(podman info --format '{{ $podman_fmt }}')
+    end
+
+    if type -q brew
+        set -x HOMEBREW_NO_ENV_HINTS 1
+    end
+end
+
+# --- Login shell ---
+
+if status is-login
+    if type -q fastfetch
+        fastfetch
+    end
+end

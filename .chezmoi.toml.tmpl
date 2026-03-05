@@ -1,0 +1,8 @@
+{{ $age_public_key := promptStringOnce . "public_key" "What is your age public key" -}}
+
+sourceDir = "~/Code/dotfiles"
+encryption = "age"
+
+[age]
+identity = "~/.config/chezmoi/key.txt"
+recipient = {{ $age_public_key | quote }}
