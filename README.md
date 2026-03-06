@@ -14,7 +14,7 @@ chezmoi init --source ~/Code/dotfiles --apply -ssh DataLabTechTV/dotfiles
 
 ### Without Secrets
 
-For systems where the age private key is not available, you won't be able to decrypt any `*.age` secrets that I have committed. I'm also assuming that the SSH private key for this repo is not available on the target system, so I removed the `--ssh` option.
+For systems where the age private key is not available, you won't be able to decrypt any `*.age` secrets that I have committed. I'm also assuming that the SSH private key for this repo is not available on the target system, so I removed the `--ssh` option. While I don't include it here, you can customize your source dir with `--source` as well, here.
 
 ```bash
 chezmoi init --apply DataLabTechTV/dotfiles
