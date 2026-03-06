@@ -9,7 +9,7 @@ export CHEZMOI_SOURCE_DIR=~/Code/dotfiles
 chezmoi init --apply --prompt -ssh DataLabTechTV/dotfiles
 ```
 
-## Instructions for you
+## Instructions for You
 
 If you want to try my configs, go right ahead, but obviously you won't be able to decrypt any `*.age` secrets I might have committed, or use the SSH version of the repo.
 
