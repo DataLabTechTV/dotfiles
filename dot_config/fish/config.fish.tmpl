@@ -55,7 +55,10 @@ abbr ca chezmoi apply
 abbr cs chezmoi status
 
 abbr pp prettyping 1.1.1.1
-abbr wake-delorean sudo ether-wake {{ include ".chezmoitemplates/secrets/homelab.mac.age" | decrypt | trim }}
+{{ if .hasAgePrivateKey }}
+{{- $homelab_mac := include ".chezmoitemplates/secrets/homelab.mac.age" | decrypt | trim -}}
+abbr wake-delorean sudo ether-wake {{ $homelab_mac }}
+{{- end }}
 
 # --- Git ---
 
