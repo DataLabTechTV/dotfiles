@@ -1,8 +1,16 @@
-{{ $age_public_key := promptStringOnce . "public_key" "What is your age public key" -}}
+{{- $age_private_key := promptStringOnce . "private_key_path"
+    "Where is your age private key"
+    (joinPath .chezmoi.homeDir ".config/chezmoi/key.txt") -}}
 
-sourceDir = "~/Code/dotfiles"
+{{- if env "CHEZMOI_SOURCE_DIR" -}}
+sourceDir = {{ env "CHEZMOI_SOURCE_DIR" | quote }}
+{{- end }}
+
 encryption = "age"
 
+{{ if stat $age_private_key -}}
+{{- $age_public_key :=  regexFind "age1[0-9a-z]+" (include $age_private_key) -}}
 [age]
-identity = "~/.config/chezmoi/key.txt"
+identity = {{ $age_private_key | quote }}
 recipient = {{ $age_public_key | quote }}
+{{- end }}
