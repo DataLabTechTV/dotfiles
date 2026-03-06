@@ -4,7 +4,7 @@
 
 My chezmoi dotfiles are designed to work with and without secrets, conditionally on whether the age private key is available on the current system. For you, an external user, always follow the [Without Secrets](#without-secrets) instructions. You can also clone my repo and replace my secrets with your own, in which case you'll be able to follow the [With Secrets](#with-secrets) instructions.
 
-## With Secrets
+### With Secrets
 
 This requires that the age private key is available, by default at `~/.config/chezmoi/key.txt`. Configs will include decrypted secrets.
 
@@ -12,7 +12,7 @@ This requires that the age private key is available, by default at `~/.config/ch
 chezmoi init --source ~/Code/dotfiles --apply -ssh DataLabTechTV/dotfiles
 ```
 
-## Without Secrets
+### Without Secrets
 
 For systems where the age private key is not available, you won't be able to decrypt any `*.age` secrets that I have committed. I'm also assuming that the SSH private key for this repo is not available on the target system, so I removed the `--ssh` option.
 
@@ -23,7 +23,7 @@ chezmoi init --apply DataLabTechTV/dotfiles
 > [!NOTE]
 > Notice that `~/.config/chezmoi/chezmoi.toml` won't include the typical configs for for age encryption to work. If the age private key becomes available, you'll need to run `chezmoi init` again to regenerate the chezmoi config.
 
-## Chezmoi Cheat Sheet
+## Cheat Sheet
 
 ### Common Commands
 
