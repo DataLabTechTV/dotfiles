@@ -2,11 +2,11 @@
 
 ## Instructions for Me
 
-This requires that the age key is available at `~/.config/chezmoi/key.txt`. Also, have the age public key available, as you'll need to input it during `init`.
+This requires that the age private key is available, by default at `~/.config/chezmoi/key.txt`.
 
 ```bash
 export CHEZMOI_SOURCE_DIR=~/Code/dotfiles
-chezmoi init --apply --prompt -ssh DataLabTechTV/dotfiles
+chezmoi init --apply -ssh DataLabTechTV/dotfiles
 ```
 
 ## Instructions for You
@@ -19,7 +19,7 @@ I would recommend you try to run the following command:
 chezmoi init --apply DataLabTechTV/dotfiles
 ```
 
-When you get prompted to input the age public key, just type whatever. You'll then need to replace any decrypted includes (grep for `age`). For example, you'll find one on the `~/.config/fish/config.fish`, where I set the MAC address for my home lab.
+You'll then need to replace any decrypted includes (grep for `age`) with your own values manually. You'll find an example of this under `~/.config/fish/config.fish`, where I set the MAC address to wake my home lab from sleep.
 
 ## Common Commands
 
