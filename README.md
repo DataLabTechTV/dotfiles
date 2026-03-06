@@ -1,27 +1,31 @@
 # Dotfiles for Chezmoi
 
-## Instructions for Me
+## Setup
 
-This requires that the age private key is available, by default at `~/.config/chezmoi/key.txt`.
+My chezmoi dotfiles are designed to work with and without secrets, conditionally on whether the age private key is available on the current system. For you, an external user, always follow the [Without Secrets](#without-secrets) instructions. You can also clone my repo and replace my secrets with your own, in which case you'll be able to follow the [With Secrets](#with-secrets) instructions.
+
+## With Secrets
+
+This requires that the age private key is available, by default at `~/.config/chezmoi/key.txt`. Configs will include decrypted secrets.
 
 ```bash
-export CHEZMOI_SOURCE_DIR=~/Code/dotfiles
-chezmoi init --apply -ssh DataLabTechTV/dotfiles
+chezmoi init --source ~/Code/dotfiles --apply -ssh DataLabTechTV/dotfiles
 ```
 
-## Instructions for You
+## Without Secrets
 
-If you want to try my configs, go right ahead, but obviously you won't be able to decrypt any `*.age` secrets I might have committed, or use the SSH version of the repo.
-
-I would recommend you try to run the following command:
+For systems where the age private key is not available, you won't be able to decrypt any `*.age` secrets that I have committed. I'm also assuming that the SSH private key for this repo is not available on the target system, so I removed the `--ssh` option.
 
 ```bash
 chezmoi init --apply DataLabTechTV/dotfiles
 ```
 
-You'll then need to replace any decrypted includes (grep for `age`) with your own values manually. You'll find an example of this under `~/.config/fish/config.fish`, where I set the MAC address to wake my home lab from sleep.
+> [!NOTE]
+> Notice that `~/.config/chezmoi/chezmoi.toml` won't include the typical configs for for age encryption to work. If the age private key becomes available, you'll need to run `chezmoi init` again to regenerate the chezmoi config.
 
-## Common Commands
+## Chezmoi Cheat Sheet
+
+### Common Commands
 
 Track a new file (or use `-r` to recursively track all files in a directory):
 
@@ -59,7 +63,7 @@ Decrypt a secret to the stdout:
 chezmoi decrypt ~/Code/dotfiles/.chezmoitemplates/secrets/secret.age
 ```
 
-## Templates
+### Templates
 
 Only files ending with `.tmpl` will be rendered as templates (e.g., see `config.fish.tmpl`).
 
