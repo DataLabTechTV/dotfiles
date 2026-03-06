@@ -2,10 +2,7 @@
     "Where is your age private key"
     (joinPath .chezmoi.homeDir ".config/chezmoi/key.txt") -}}
 
-{{ if env "CHEZMOI_SOURCE_DIR" -}}
-sourceDir = {{ env "CHEZMOI_SOURCE_DIR" | quote }}
-{{- end }}
-
+sourceDir = {{ .chezmoi.sourceDir | quote }}
 encryption = "age"
 
 {{ if stat $age_private_key -}}
