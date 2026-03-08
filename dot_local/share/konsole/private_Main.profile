@@ -1,0 +1,16 @@
+[Appearance]
+ColorScheme=Catppuccin-Mocha
+Font=CaskaydiaCove Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+
+[General]
+Command=/bin/fish -l
+Directory=/home/dlt
+Name=Main
+Parent=FALLBACK/
+StartInCurrentSessionDir=false
+TerminalColumns=108
+TerminalRows=35
+
+[Scrolling]
+HistorySize=10000
+ScrollBarPosition=2
