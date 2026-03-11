@@ -1,0 +1,23 @@
+<effectgroup description="Fade-in, zoom in slowly, fade-out." id="Soft Movement" parentIn="0">
+ <description>Fade-in, zoom in slowly, fade-out.</description>
+ <effect id="pan_zoom">
+  <property name="transition.repeat_off">1</property>
+  <property name="producer.resource">0x00000000</property>
+  <property name="use_normalised">0</property>
+  <property name="transition.distort">0</property>
+  <property name="transition.mirror_off">1</property>
+  <property name="transition.rect">0=0 0 1920 1080;439=-192 -109 2304 1296</property>
+ </effect>
+ <effect id="fade_to_black">
+  <property name="out">585</property>
+  <property name="level&#xa;alpha">1
+0=1;-1=0</property>
+  <property name="in">555</property>
+ </effect>
+ <effect id="fade_from_black">
+  <property name="in">0</property>
+  <property name="level&#xa;alpha">1
+0=0;-1=1</property>
+  <property name="out">30</property>
+ </effect>
+</effectgroup>

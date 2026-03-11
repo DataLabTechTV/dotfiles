@@ -1,0 +1,17 @@
+<effectgroup description="Picture-in-picture webcam, bottom right." id="Webcam" parentIn="1585">
+ <description>Picture-in-picture webcam, on the bottom right.</description>
+ <effect id="qtcrop">
+  <property name="color">1585=0x00000000</property>
+  <property name="radius">1585=0</property>
+  <property name="circle">0</property>
+  <property name="rect">1585=520 0 887 1080</property>
+ </effect>
+ <effect id="pan_zoom">
+  <property name="transition.repeat_off">1</property>
+  <property name="producer.resource">/var/mnt/editing/Kdenlive/0x00000000</property>
+  <property name="use_normalised">0</property>
+  <property name="transition.distort">0</property>
+  <property name="transition.mirror_off">1</property>
+  <property name="transition.rect">00:00:52.833=1550 640 320 380</property>
+ </effect>
+</effectgroup>
