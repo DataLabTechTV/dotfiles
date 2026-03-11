@@ -9,7 +9,7 @@ My chezmoi dotfiles are designed to work with and without secrets, conditionally
 This requires that the age private key is available, by default at `~/.config/chezmoi/key.txt`. Configs will include decrypted secrets.
 
 ```bash
-chezmoi init --source ~/Code/dotfiles --apply -ssh DataLabTechTV/dotfiles
+chezmoi init --source ~/Code/dotfiles --apply --ssh DataLabTechTV/dotfiles
 ```
 
 ### Without Secrets
