@@ -18,6 +18,9 @@ return {
             },
           },
         },
+        taplo = {
+          enabled = false,
+        },
       },
     },
   },
