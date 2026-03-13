@@ -1,0 +1,17 @@
+# To use the theme, include this file in your own gitconfig file:
+#
+# [include]
+#     path = ~/.local/share/delta/themes.gitconfig
+#
+# Then, in your own gitconfig file, activate the chosen theme, e.g.
+#
+# [delta]
+#    features = megabat
+
+[delta "megabat"]
+    minus-emph-style = yellow bold darkmagenta
+    minus-style = black italic red
+    plus-emph-style = yellow bold darkcyan
+    plus-style = black italic green
+    syntax-theme = Dracula
+
