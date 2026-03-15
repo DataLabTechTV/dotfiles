@@ -1,6 +1,5 @@
 [Automount]
 Where=/var/mnt/smb
-Unit=var-mnt-smb.mount
 
 [Install]
 WantedBy=multi-user.target
