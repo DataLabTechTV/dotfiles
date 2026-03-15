@@ -12,5 +12,7 @@ TerminalColumns=108
 TerminalRows=35
 
 [Scrolling]
+HighlightScrolledLines=false
 HistorySize=10000
+ReflowLines=true
 ScrollBarPosition=2
