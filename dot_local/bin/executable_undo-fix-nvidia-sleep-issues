@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# undo-fix-nvidia-sleep-issue: undo NVIDIA kargs & enable resume/suspend services
+
+sudo rpm-ostree kargs \
+  --delete-if-present nvidia.NVreg_PreserveVideoMemoryAllocations=0 \
+  --delete-if-present nvidia_drm.modeset=1 \
+  --delete-if-present nvidia_drm.fbdev=1
+
+sudo systemctl unmask \
+  nvidia-resume.service \
+  nvidia-hibernate.service \
+  nvidia-suspend.service \
+  nvidia-suspend-then-hibernate.service
