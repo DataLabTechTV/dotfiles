@@ -1,0 +1,23 @@
+include "/etc/niri/config.kdl"
+
+spawn-at-startup "tray-launch" "flatpak" "run" "--command=signal-desktop" "org.signal.Signal"
+spawn-at-startup "tray-launch" "flatpak" "run" "--command=Telegram" "org.telegram.desktop" "-autostart"
+spawn-at-startup "tray-launch" "flatpak" "run" "dev.vencord.Vesktop" "--start-minimized"
+spawn-at-startup "tray-launch" "flatpak" "run" "--command=SyncThingy" "com.github.zocker_160.SyncThingy"
+spawn-at-startup "tray-launch" "flatpak" "run" "--command=cryptomator" "org.cryptomator.Cryptomator"
+
+screenshot-path null
+
+hotkey-overlay {
+  skip-at-startup
+}
+
+input {
+  keyboard {
+    xkb { layout "pt"; }
+  }
+}
+
+output "DP-1" {
+  scale 2.0
+}
