@@ -33,6 +33,12 @@ layout {
 
 // TODO: move to system-wide config
 
+gestures {
+  hot-corners {
+    off
+  }
+}
+
 window-rule {
   match app-id="spotify"
   open-maximized true
