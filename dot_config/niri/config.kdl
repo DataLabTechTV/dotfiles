@@ -29,9 +29,14 @@ layout {
     proportion 0.33333
     proportion 0.725
   }
-}
 
 // TODO: move to system-wide config
+
+  focus-ring {
+    width 1
+    active-gradient from="#313244" to="#45475a" angle=90
+  }
+}
 
 gestures {
   hot-corners {
