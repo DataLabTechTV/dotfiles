@@ -50,6 +50,11 @@ window-rule {
 }
 
 window-rule {
+  match app-id="obsidian"
+  open-maximized true
+}
+
+window-rule {
   match app-id="code"
   open-maximized true
 }
