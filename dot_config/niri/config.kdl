@@ -69,4 +69,10 @@ window-rule {
 
 binds {
   Mod+B repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle"; }
+  // replaces Mod+Page_Down and Mod+Page_Up
+  Mod+Ctrl+Down { focus-workspace-down; }
+  Mod+Ctrl+Up { focus-workspace-up; }
+  // replaces corresponding with cooldown
+  Mod+Ctrl+WheelScrollDown cooldown-ms=200 { focus-workspace-down; }
+  Mod+Ctrl+WheelScrollUp cooldown-ms=200 { focus-workspace-up; }
 }
