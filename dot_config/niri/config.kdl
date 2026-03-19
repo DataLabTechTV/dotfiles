@@ -39,9 +39,18 @@ window-rule {
 }
 
 window-rule {
+  match app-id="code"
+  open-maximized true
+}
+
+window-rule {
   match title="^Picture-in-picture$"
   open-floating true
   default-column-width { fixed 480; }
   default-window-height { fixed 270; }
   default-floating-position x=16 y=16 relative-to="bottom-right"
+}
+
+binds {
+  Mod+B repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle"; }
 }
