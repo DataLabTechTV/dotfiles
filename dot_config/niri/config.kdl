@@ -48,4 +48,5 @@ window-rule {
 binds {
   Mod+W { toggle-column-tabbed-display; }
   Mod+Period repeat=false { spawn "plasma-emojier"; }
+  XF86Calculator { spawn "flatpak" "run" "org.kde.kcalc"; }
 }
