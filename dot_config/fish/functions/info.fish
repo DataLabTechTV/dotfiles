@@ -10,5 +10,5 @@ function info
     end
 
     whereis $argv[1]
-    $argv[1] --version || $argv[1] version || $argv[1] -version
+    $argv[1] --version || $argv[1] version || $argv[1] -version || $argv[1] -V || true
 end
