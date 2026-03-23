@@ -33,6 +33,8 @@ layout {
 
 // TODO: move to system-wide
 
+spawn-at-startup "niri-float-sticky" "-title" "Picture-in-picture"
+
 window-rule {
   match app-id="org.kde.plasma.emojier"
   open-floating true
