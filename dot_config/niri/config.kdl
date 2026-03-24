@@ -47,6 +47,11 @@ window-rule {
   open-maximized true
 }
 
+window-rule {
+  match app-id="org.inkscape.Inkscape"
+  open-maximized true
+}
+
 binds {
   Mod+W { toggle-column-tabbed-display; }
   Mod+Period repeat=false { spawn "plasma-emojier"; }
