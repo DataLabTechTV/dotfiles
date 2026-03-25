@@ -56,4 +56,6 @@ binds {
   Mod+W { toggle-column-tabbed-display; }
   Mod+Period repeat=false { spawn "plasma-emojier"; }
   XF86Calculator { spawn "flatpak" "run" "org.kde.kcalc"; }
+  Mod+Ctrl+H { consume-or-expel-window-left; }
+  Mod+Ctrl+L { consume-or-expel-window-right; }
 }
