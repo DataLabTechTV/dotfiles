@@ -52,6 +52,13 @@ window-rule {
   open-maximized true
 }
 
+// XXX: delete rules from system-wide
+window-rule {
+  match app-id="kdenlive"
+  open-maximized true
+  open-floating false
+}
+
 binds {
   Mod+W { toggle-column-tabbed-display; }
   Mod+Period repeat=false { spawn "plasma-emojier"; }
