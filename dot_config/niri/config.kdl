@@ -30,39 +30,3 @@ layout {
     proportion 0.725
   }
 }
-
-// TODO: move to system-wide
-
-spawn-at-startup "niri-float-sticky" "-title" "Picture-in-picture"
-
-window-rule {
-  match app-id="org.kde.plasma.emojier"
-  open-floating true
-  default-column-width { fixed 560; }
-  default-window-height { fixed 448; }
-}
-
-window-rule {
-  match app-id="steam"
-  open-maximized true
-}
-
-window-rule {
-  match app-id="org.inkscape.Inkscape"
-  open-maximized true
-}
-
-// XXX: delete rules from system-wide
-window-rule {
-  match app-id="kdenlive"
-  open-maximized true
-  open-floating false
-}
-
-binds {
-  Mod+W { toggle-column-tabbed-display; }
-  Mod+Period repeat=false { spawn "plasma-emojier"; }
-  XF86Calculator { spawn "flatpak" "run" "org.kde.kcalc"; }
-  Mod+Ctrl+H { consume-or-expel-window-left; }
-  Mod+Ctrl+L { consume-or-expel-window-right; }
-}
