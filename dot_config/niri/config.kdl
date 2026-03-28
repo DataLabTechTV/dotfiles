@@ -30,3 +30,25 @@ layout {
     proportion 0.725
   }
 }
+
+// TODO: Move to system-wide.
+
+window-rule {
+  match is-floating=true
+  shadow { on; }
+}
+
+window-rule {
+  match app-id="net.lutris.Lutris"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="vesktop"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+  default-floating-position x=-266 y=16 relative-to="top-right"
+}
