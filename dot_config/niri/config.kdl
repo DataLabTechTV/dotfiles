@@ -49,6 +49,22 @@ window-rule {
 }
 
 window-rule {
+  match app-id="com.obsproject.Studio"
+  open-maximized true
+}
+
+window-rule {
   match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
   default-floating-position x=-266 y=16 relative-to="top-right"
+}
+
+window-rule {
+  match app-id="steam" title="^Sign in to Steam$"
+  default-floating-position x=580 y=260 relative-to="top-left"
+}
+
+binds {
+  Mod+Shift+F { fullscreen-window; }
+  Mod+M { maximize-column; }
+  Mod+F { maximize-window-to-edges; }
 }
