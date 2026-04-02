@@ -54,6 +54,11 @@ window-rule {
 }
 
 window-rule {
+  match app-id="kitty"
+  default-column-width { proportion 0.66667; }
+}
+
+window-rule {
   match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
   default-floating-position x=-266 y=16 relative-to="top-right"
 }
@@ -67,4 +72,7 @@ binds {
   Mod+Shift+F { fullscreen-window; }
   Mod+M { maximize-column; }
   Mod+F { maximize-window-to-edges; }
+  Mod+D repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+  Mod+N repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; }
+  Mod+Ctrl+V repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "togglePanel"; }
 }
