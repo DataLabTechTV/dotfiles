@@ -31,53 +31,7 @@ layout {
   }
 }
 
-// TODO: Move to system-wide.
-
 window-rule {
-  match is-floating=true
-  shadow { on; }
-}
-
-window-rule {
-  match app-id="net.lutris.Lutris"
-  open-maximized true
-}
-
-window-rule {
-  match app-id="vesktop"
-  open-maximized true
-}
-
-window-rule {
-  match app-id="com.obsproject.Studio"
-  open-maximized true
-}
-
-window-rule {
-  match app-id="kitty"
+  match app-id="org.kde.konsole"
   default-column-width { proportion 0.66667; }
-}
-
-window-rule {
-  match app-id="io.github.amit9838.mousam"
-  default-column-width { proportion 0.66667; }
-}
-
-window-rule {
-  match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-  default-floating-position x=-266 y=16 relative-to="top-right"
-}
-
-window-rule {
-  match app-id="steam" title="^Sign in to Steam$"
-  default-floating-position x=580 y=260 relative-to="top-left"
-}
-
-binds {
-  Mod+Shift+F { fullscreen-window; }
-  Mod+M { maximize-column; }
-  Mod+F { maximize-window-to-edges; }
-  Mod+D repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-  Mod+N repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; }
-  Mod+Ctrl+V repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "togglePanel"; }
 }
