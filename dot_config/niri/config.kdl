@@ -42,6 +42,11 @@ recent-windows {
 }
 
 window-rule {
+  match app-id="dev.zed.Zed"
+  open-maximized true
+}
+
+window-rule {
   match app-id="org.kde.konsole"
   default-column-width { proportion 0.66667; }
 }
