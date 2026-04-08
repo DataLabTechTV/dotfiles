@@ -31,6 +31,16 @@ layout {
   }
 }
 
+recent-windows {
+  previews {
+    max-height 200
+  }
+
+  highlight {
+    corner-radius 16
+  }
+}
+
 window-rule {
   match app-id="org.kde.konsole"
   default-column-width { proportion 0.66667; }
