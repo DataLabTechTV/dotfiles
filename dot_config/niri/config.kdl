@@ -47,6 +47,11 @@ window-rule {
 }
 
 window-rule {
+  match app-id="dev.zed.Zed" title="^Zed — Settings$"
+  open-floating true
+}
+
+window-rule {
   match app-id="org.kde.konsole"
   default-column-width { proportion 0.66667; }
 }
