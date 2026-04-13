@@ -57,6 +57,11 @@ window-rule {
 }
 
 window-rule {
+  match app-id="org.gimp.GIMP"
+  open-maximized true
+}
+
+window-rule {
   match title="^Picture-in-picture$"
   open-floating true
   open-focused false
