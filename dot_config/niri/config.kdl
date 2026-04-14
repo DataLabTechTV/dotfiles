@@ -62,6 +62,13 @@ window-rule {
 }
 
 window-rule {
+  match app-id="org.kde.kcalc"
+  open-floating true
+  default-column-width { fixed 300; }
+  default-window-height { fixed 420; }
+}
+
+window-rule {
   match title="^Picture-in-picture$"
   open-floating true
   open-focused false
