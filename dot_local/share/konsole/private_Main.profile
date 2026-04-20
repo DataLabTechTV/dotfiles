@@ -3,7 +3,7 @@ ColorScheme=Catppuccin-Mocha
 Font=CaskaydiaCove Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [General]
-Command=/bin/fish -l
+Command=/bin/bash
 Directory=/home/dlt
 Name=Main
 Parent=FALLBACK/
