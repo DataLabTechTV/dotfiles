@@ -18,6 +18,7 @@ disabled = true
 
 [container]
 disabled = false
+style = 'green'
 
 [docker_context]
 only_with_files = false
