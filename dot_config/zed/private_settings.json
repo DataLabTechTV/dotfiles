@@ -87,6 +87,20 @@
     },
   },
 
+  // --- Languages ---
+
+  "languages": {
+    "Shell Script": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "shfmt",
+          "arguments": ["--filename", "{buffer_path}"],
+        },
+      },
+    },
+  },
+
   // --- Tooling ---
 
   "use_podman": true,
