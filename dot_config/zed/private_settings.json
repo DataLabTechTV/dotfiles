@@ -48,10 +48,12 @@
     "quick_actions": false,
     "breadcrumbs": false,
   },
+
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": false,
   },
+
   "title_bar": {
     "show_user_menu": true,
     "button_layout": "",
@@ -72,6 +74,7 @@
 
   "preferred_line_length": 120,
   "soft_wrap": "preferred_line_length",
+
   "tab_size": 2,
   "tabs": {
     "file_icons": true,
