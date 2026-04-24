@@ -58,7 +58,23 @@
     "breadcrumbs": false,
   },
   "project_panel": {
+    "dock": "left",
+    "auto_fold_dirs": false,
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "sidebar_side": "right",
     "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
   },
 
   // --- Editor ---
@@ -90,8 +106,13 @@
 
   // --- Tooling ---
   "use_podman": true,
-  "disable_ai": true,
-  "inline_code_actions": false,
+  "disable_ai": false,
+  "inline_code_actions": true,
+  "agent_servers": {
+    "opencode": {
+      "type": "registry",
+    },
+  },
 
   // --- Security ---
   "session": {
