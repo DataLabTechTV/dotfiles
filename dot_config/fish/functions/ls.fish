@@ -1,4 +1,9 @@
 function ls
+    if ! type -q eza
+        command ls --color $argv
+        return 0
+    end
+
     set args
 
     for arg in $argv
