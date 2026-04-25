@@ -42,7 +42,7 @@ window-rule {
   open-maximized true
 
   popups {
-    opacity 0.75
+    opacity 0.9
 
     background-effect {
       blur true
