@@ -29,6 +29,24 @@ layout {
   }
 }
 
+blur {
+  passes 4
+  noise 0
+  offset 2
+}
+
+layer-rule {
+  background-effect {
+    xray false
+  }
+}
+
+window-rule {
+  background-effect {
+    xray false
+  }
+}
+
 layer-rule {
   match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
   opacity 0.85
