@@ -112,6 +112,24 @@
     "opencode": {
       "type": "registry",
     },
+    "ramalama-opencode": {
+      "type": "custom",
+      "command": "distrobox-host-exec",
+      "args": [
+        "/home/dlt/Code/ramalama/.venv/bin/ramalama",
+        "sandbox",
+        "opencode",
+        "--acp",
+        "on",
+        "-w",
+        "/home/dlt/Code/sandbox/vibecoding",
+        "-c",
+        "51200",
+        "--ngl",
+        "10",
+        "hf://unsloth/Qwen3.5-9B-GGUF:Q4_K_M",
+      ],
+    },
   },
 
   // --- Security ---
