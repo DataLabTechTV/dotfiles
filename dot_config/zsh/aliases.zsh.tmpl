@@ -1,0 +1,31 @@
+unalias ls 2>/dev/null
+
+alias ff='fastfetch'
+alias v='vim'
+alias pp='prettyping 1.1.1.1'
+{{ if .hasAgePrivateKey }}
+{{- $homelab_mac := include ".chezmoitemplates/secrets/homelab.mac.age" | decrypt | trim -}}
+alias wake-delorean='sudo ether-wake {{ $homelab_mac }}'
+{{- end }}
+
+# --- Distrobox ---
+alias d='distrobox-host-exec'
+alias dls='distrobox-host-exec distrobox ls'
+alias ds='distrobox-host-exec distrobox stop'
+
+# --- Chezmoi ---
+alias c='chezmoi'
+alias ce='chezmoi edit'
+alias ca='chezmoi apply'
+alias cs='chezmoi status'
+alias ccd='chezmoi cd'
+
+# --- Git ---
+alias gsls='git ls-files -v | grep ^S'
+alias gs='git update-index --skip-worktree'
+alias gns='git update-index --no-skip-worktree'
+
+# --- Kubernetes ---
+alias m='minikube'
+alias k='kubectl'
+alias kns='kubens'

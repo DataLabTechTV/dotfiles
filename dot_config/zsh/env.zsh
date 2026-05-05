@@ -7,7 +7,7 @@ export BC_ENV_ARGS=$HOME/.bcrc
 
 
 # --- History ---
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
 
@@ -24,14 +24,19 @@ path=(
   /usr/local/go/bin
   $path
 )
-export PATH
 
 
 # --- MacOS Only ---
 if [[ "$(uname)" == "Darwin" ]]; then
+  # Java
   export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=1
   command -v /usr/libexec/java_home >/dev/null 2>&1 &&
     export JAVA_HOME=$(/usr/libexec/java_home)
+
+  # PostgreSQL
+  path=("/opt/homebrew/opt/postgresql@15/bin" $path)
+  export LDFLAGS="-L/opt/homebrew/opt/postgresql@15/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
 fi
 
 
