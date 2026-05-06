@@ -26,3 +26,6 @@ only_with_files = false
 [directory]
 truncation_length = 2     # Shows parent and current directory
 truncate_to_repo = false  # Also apply truncation_length to git repos
+
+[shell]
+disabled = true
