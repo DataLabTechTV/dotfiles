@@ -6,10 +6,11 @@ export PAGER='less -X -F -i'
 export BC_ENV_ARGS=$HOME/.bcrc
 
 
-# --- History ---
+# --- Z Shell ---
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
+WORDCHARS="${WORDCHARS//\/}"
 
 
 # --- Path ---
