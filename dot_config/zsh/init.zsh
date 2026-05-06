@@ -1,7 +1,7 @@
 source $HOME/.config/zsh/env.zsh
 source $HOME/.config/zsh/options.zsh
 
-[[ $- != *i* ]] && return
+[[ -o interactive ]] || return
 
 fpath=("$HOME/.config/zsh/functions" $fpath)
 autoload -Uz $HOME/.config/zsh/functions/*(N:t)
