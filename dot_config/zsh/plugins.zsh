@@ -1,3 +1,24 @@
+# --- Antidote ---
+
+ANTIDOTE_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/antidote"
+PLUGINS_FILE="$HOME/.config/zsh/plugins.txt"
+
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/antidote"
+PLUGINS_OUTPUT="$CACHE_DIR/plugins.zsh"
+
+if [[ -r "$ANTIDOTE_HOME/antidote.zsh" && -r "$PLUGINS_FILE" ]]; then
+  source "$ANTIDOTE_HOME/antidote.zsh"
+
+  mkdir -p "$CACHE_DIR"
+
+  if [[ ! -r "$PLUGINS_OUTPUT" || "$PLUGINS_FILE" -nt "$PLUGINS_OUTPUT" ]]; then
+    antidote bundle <"$PLUGINS_FILE" >"$PLUGINS_OUTPUT"
+  fi
+
+  source "$PLUGINS_OUTPUT"
+fi
+
+
 # --- iterm2 (MacOS Only) ---
 if [[ "$(uname)" == "Darwin" ]]; then
   [[ -f "$HOME/.iterm2_shell_integration.zsh" ]] &&
