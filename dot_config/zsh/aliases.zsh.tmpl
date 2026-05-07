@@ -9,16 +9,10 @@ alias wake-delorean='sudo ether-wake {{ $homelab_mac }}'
 {{- end }}
 
 # --- Distrobox ---
-alias d='distrobox-host-exec'
-alias dls='distrobox-host-exec distrobox ls'
-alias ds='distrobox-host-exec distrobox stop'
+alias d='distrobox'
 
 # --- Chezmoi ---
 alias c='chezmoi'
-alias ce='chezmoi edit'
-alias ca='chezmoi apply'
-alias cs='chezmoi status'
-alias ccd='chezmoi cd'
 
 # --- Git ---
 alias gsls='git ls-files -v | grep ^S'
