@@ -27,6 +27,9 @@
     "custom": 1.4,
   },
   "terminal": {
+    "shell": {
+      "program": "zsh"
+    },
     "font_family": "CaskaydiaMono Nerd Font Propo",
     "font_size": 15.0,
     "font_weight": 400.0,
