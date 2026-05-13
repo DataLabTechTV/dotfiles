@@ -28,3 +28,30 @@ layout {
     proportion 0.725
   }
 }
+
+window-rule {
+  match app-id="com.mitchellh.ghostty"
+  default-column-width { proportion 0.66667; }
+  background-effect {
+    blur true
+  }
+}
+
+window-rule {
+  match app-id="librewolf"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="brave-browser"
+  open-maximized true
+
+  popups {
+    opacity 0.9
+    geometry-corner-radius 10
+
+    background-effect {
+      blur true
+    }
+  }
+}
