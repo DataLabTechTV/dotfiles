@@ -4,8 +4,6 @@ spawn-at-startup "tray-launch" "flatpak" "run" "--command=signal-desktop" "org.s
 spawn-at-startup "tray-launch" "flatpak" "run" "--command=Telegram" "org.telegram.desktop" "-autostart"
 spawn-at-startup "tray-launch" "flatpak" "run" "--command=SyncThingy" "com.github.zocker_160.SyncThingy"
 
-screenshot-path null
-
 hotkey-overlay {
   skip-at-startup
 }
@@ -26,32 +24,5 @@ layout {
     proportion 0.66667
     proportion 0.33333
     proportion 0.725
-  }
-}
-
-window-rule {
-  match app-id="com.mitchellh.ghostty"
-  default-column-width { proportion 0.66667; }
-  background-effect {
-    blur true
-  }
-}
-
-window-rule {
-  match app-id="librewolf"
-  open-maximized true
-}
-
-window-rule {
-  match app-id="brave-browser"
-  open-maximized true
-
-  popups {
-    opacity 0.9
-    geometry-corner-radius 10
-
-    background-effect {
-      blur true
-    }
   }
 }
