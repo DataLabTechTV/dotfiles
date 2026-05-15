@@ -28,7 +28,7 @@
   },
   "terminal": {
     "shell": {
-      "program": "zsh"
+      "program": "zsh",
     },
     "font_family": "CaskaydiaMono Nerd Font Propo",
     "font_size": 15.0,
