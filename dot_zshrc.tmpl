@@ -1,0 +1,4 @@
+{{ if .hasAgePrivateKey }}
+{{- $homelab_mac := include ".chezmoitemplates/secrets/homelab.mac.age" | decrypt | trim -}}
+alias wake-delorean='sudo ether-wake {{ $homelab_mac }}'
+{{- end }}
