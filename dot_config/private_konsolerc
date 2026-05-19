@@ -10,6 +10,7 @@ ConfigVersion=1
 RememberWindowSize=false
 
 [MainWindow]
+MenuBar=Disabled
 ToolBarsMovable=Enabled
 
 [UiSettings]
