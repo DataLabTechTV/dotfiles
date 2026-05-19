@@ -3,7 +3,7 @@ ColorScheme=Catppuccin-Mocha
 Font=CaskaydiaCove Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [General]
-Command=/bin/bash
+Command=/bin/zsh -l
 Directory=/home/dlt
 Name=Main
 Parent=FALLBACK/
