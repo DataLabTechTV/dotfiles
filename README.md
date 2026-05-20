@@ -1,5 +1,12 @@
 # Dotfiles for Chezmoi
 
+> [!IMPORTANT]
+> Most of the general dotfiles in this repo have been (or will be) migrated to the [DLT OS](https://github.com/DataLabTechTV/dltos) Bazzite custom bootc image. If you're interested, you should look under [system_files/etc](https://github.com/DataLabTechTV/dltos/tree/main/system_files/etc) or [system_files/usr/share](https://github.com/DataLabTechTV/dltos/tree/main/system_files/usr/share) for the corresponding app directory (e.g., `system_files/usr/share/nvim/defaults`).
+>
+> Configs under `system_files/etc` will be copied to `/etc`, while configs under `system_files/usr/share/<app>/defaults` will be copied to the user's home using `systemd-tmpfiles`, when the user logs into the custom image for the first time, and assuming no config exists already.
+>
+> From now on, I'll only use `chezmoi` to manage any configs that won't fit into the custom bootc image, as they are too personal, but I might drop it altogether in the future, if there's a better alternative that lets me bake the configs into the custom image.
+
 ## Setup
 
 My chezmoi dotfiles are designed to work with and without secrets, conditionally on whether the age private key is available on the current system. For you, an external user, always follow the [Without Secrets](#without-secrets) instructions. You can also clone my repo and replace my secrets with your own, in which case you'll be able to follow the [With Secrets](#with-secrets) instructions.
