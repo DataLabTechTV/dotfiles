@@ -35,3 +35,9 @@ window-rule {
     blur true
   }
 }
+
+window-rule {
+  match app-id="org.kde.kdenlive" title="Splash Screen — Kdenlive"
+  geometry-corner-radius 8
+  open-floating true
+}
