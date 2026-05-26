@@ -41,3 +41,27 @@ window-rule {
   geometry-corner-radius 8
   open-floating true
 }
+
+window-rule {
+  match app-id="org.signal.Signal"
+  opacity 0.9
+  background-effect {
+    blur true
+  }
+}
+
+window-rule {
+  match app-id="org.telegram.desktop"
+  opacity 0.9
+  background-effect {
+    blur true
+  }
+}
+
+window-rule {
+  match app-id="obsidian"
+  opacity 0.9
+  background-effect {
+    blur true
+  }
+}
