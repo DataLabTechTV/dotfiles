@@ -29,7 +29,6 @@ layout {
 
 window-rule {
   match app-id="emacs"
-  opacity 0.9
   default-column-width { proportion 0.66667; }
   background-effect {
     blur true
@@ -64,4 +63,9 @@ window-rule {
   background-effect {
     blur true
   }
+}
+
+window-rule {
+  match app-id="org.kde.okular"
+  default-column-width { proportion 0.66667; }
 }
